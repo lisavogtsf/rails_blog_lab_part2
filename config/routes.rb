@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'posts/edit', to: 'posts#edit'
   get 'posts/:id', to: 'posts#show'
   get 'tags', to: 'tags#index'
-  get 'tag/:id', to: 'tags#show'
+  get 'tags/:id', to: 'tags#show'
 
   post 'posts/create', to: 'posts#create'
   post 'posts/delete', to: 'posts#delete'
