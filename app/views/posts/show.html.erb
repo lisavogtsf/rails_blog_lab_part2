@@ -12,8 +12,7 @@
 
 <p><%= @post.description %></p>
 
-<form method="GET" action="/posts/edit">
-  <input type="hidden" name="id" value="<%=@post.id%>">
+<form method="GET" action="/posts/<%=@post.id%>/edit">
   <%= token_tag form_authenticity_token %>
   <button>Update</button>
 </form>
