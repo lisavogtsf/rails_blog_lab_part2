@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'tags/:id', to: 'tags#show'
 
   post 'posts/create', to: 'posts#create'
-  post 'posts/delete', to: 'posts#delete'
-  post 'posts/update', to: 'posts#update'
+  delete 'posts/:id', to: 'posts#delete'
+  put 'posts/:id', to: 'posts#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
