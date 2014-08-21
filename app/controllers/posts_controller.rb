@@ -42,7 +42,7 @@ class PostsController < ApplicationController
         post.tags << tag
       end
     end
-    redirect_to "/post/" + id_data
+    redirect_to "/posts/" + id_data
   end
   def delete
     post = Post.find_by_id(params[:id])
