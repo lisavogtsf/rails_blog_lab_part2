@@ -1,1 +1,16 @@
-<p>Show all the posts</p>
+<h1>Posts</h1>
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Link</th>
+  </tr>
+  <% @all_posts.each do |post| %>
+  <tr>
+    <td><%= post.author %></td>
+    <td><%= post.title %></td>
+    <td><a href="/post/<%=post.id%>">Show</a>
+  </tr>
+  <% end %>
+</table>
