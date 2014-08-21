@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'posts/new', to: 'posts#new'
   get 'post/:id', to: 'posts#show'
+  get 'tags', to: 'tags#index'
 
   post 'posts/create', to: 'posts#create'
 
