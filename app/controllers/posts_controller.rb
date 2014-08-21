@@ -23,4 +23,11 @@ class PostsController < ApplicationController
 
     redirect_to "/"
   end
+  def delete
+    post = Post.find_by_id(params[:id])
+    if post
+      post.destroy
+    end
+    redirect_to "/"
+  end
 end
