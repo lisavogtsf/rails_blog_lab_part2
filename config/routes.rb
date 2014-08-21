@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  get 'posts', to: 'posts#index'
   get 'posts/new', to: 'posts#new'
   get 'posts/edit', to: 'posts#edit'
   get 'post/:id', to: 'posts#show'
