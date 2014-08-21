@@ -2,4 +2,8 @@
 
 <p>Author: <%= @post.author %></p>
 
+<% if @tags.length > 0 %>
+<p>Tags: <%= @tags.map(&:name).join(", ") %></p>
+<% end %>
+
 <p><%= @post.description %></p>
