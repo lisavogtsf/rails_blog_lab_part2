@@ -3,7 +3,11 @@
 <p>Author: <%= @post.author %></p>
 
 <% if @tags.length > 0 %>
-<p>Tags: <%= @tags.map(&:name).join(", ") %></p>
+<p>Tags:
+<% @tags.each do |tag| %>
+<a href="/tag/<%=tag.id%>"><%=tag.name%></a>
+<% end %>
+</p>
 <% end %>
 
 <p><%= @post.description %></p>
