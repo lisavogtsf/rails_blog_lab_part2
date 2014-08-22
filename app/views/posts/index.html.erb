@@ -4,13 +4,19 @@
 	<tr>
 		<th>Author</th>
 		<th>Title</th>
+		<th>Timestamp</th>
+		<th>Blog Post</th>
+		<th># Comments</th>
 		<th>Link</th>
 	</tr>
 	<% @all_posts.each do |post| %>
 	<tr>
 		<td><%= post.author %></td>
 		<td><%= post.title %></td>
-		<td><a href="/posts/<%=post.id%>">Show</a>
+		<td><%= post.created_at %></td>
+		<td><%=post.description%></td>
+		<td><%=post.comments.length%></td>
+		<td><a href="/posts/<%=post.id%>">Show</a></td>
 	</tr>
 	<% end %>
 </table>
