@@ -1,0 +1,9 @@
+/*custom_stylesheet.css*/
+body{
+	background-color: teal;
+}
+.container {
+	background-color: cornsilk;
+	margin: auto;
+	padding: 40px;
+}
