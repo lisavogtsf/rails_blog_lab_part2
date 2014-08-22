@@ -9,7 +9,14 @@ class CommentsController < ApplicationController
 	def create
 		post_id = params[:post_id]
 		@post = Post.find(post_id)
-		@comment = @post.comments.new
+		comment_data = params[:post].permit(:commenter, :description)
+		@comment = @post.comments.new(comments_params)
+
+		# if @comment.save
+		# 	redirect_to [@post, @comment]
+		# else
+		# 	render action: 'new'
+		# end
 	end
 
 end

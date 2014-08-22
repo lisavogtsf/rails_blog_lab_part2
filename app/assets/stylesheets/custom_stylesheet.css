@@ -13,3 +13,6 @@ table {
 blockquote {
 	background-color: white;
 }
+button {
+	margin: 5px;
+}

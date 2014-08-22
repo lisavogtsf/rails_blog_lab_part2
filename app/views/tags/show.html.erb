@@ -1,4 +1,4 @@
-<h1>Tag: <%= @tag.name %></h1>
+<h1>Posts tagged with: <%= @tag.name %></h1>
 
 <ul>
   <% @tag.posts.each do |post| %>
@@ -6,6 +6,6 @@
   <% end %>
 </ul>
 
-<p><a href="/tags">Return to main tag page</a></p>
+<p><a href="/tags">Browse tags</a></p>
 
 <p><a href="/posts">Return to main posts page</a></p>

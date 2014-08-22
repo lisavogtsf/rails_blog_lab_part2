@@ -1,12 +1,12 @@
 <h1>Posts</h1>
 
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-responsive">
 	<tr>
 		<th>Author</th>
 		<th>Title</th>
 		<th>Timestamp</th>
 		<th>Blog Post</th>
-		<th># Comments</th>
+		<th># </th>
 		<th>Link</th>
 	</tr>
 	<% @all_posts.each do |post| %>
@@ -22,4 +22,5 @@
 </table>
 
 <br>
-<a href="/posts/new">New Post</a>
+<p><a href="/posts/new">New Post</a></p>
+<p><a href="/tags">Browse tags</a></p>

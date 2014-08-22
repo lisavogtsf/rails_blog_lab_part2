@@ -12,14 +12,44 @@
 
 <blockquote class="blockquote"><%= @post.description %></blockquote>
 
-<form method="GET" action="/posts/<%=@post.id%>/edit">
-  <%= token_tag form_authenticity_token %>
-  <button class="btn btn-default">Update</button>
-</form>
-<form method="POST" action="/posts/<%=@post.id%>">
-  <input type="hidden" name="_method" value="DELETE">
-  <%= token_tag form_authenticity_token %>
-  <button class="btn btn-warning">Delete</button>
-</form>
+<!-- display comments -->
+<div class="row">
+	<div class="col-md-2">
+		<!-- update post -->
+		<form method="GET" action="/posts/<%=@post.id%>/edit">
+			<%= token_tag form_authenticity_token %>
+			<button class="btn btn-warning">Update Post</button>
+		</form>
+		<!-- delete post -->
+		<form method="POST" action="/posts/<%=@post.id%>">
+			<input type="hidden" name="_method" value="DELETE">
+			<%= token_tag form_authenticity_token %>
+			<button class="btn btn-danger">Delete Post</button>
+		</form>
+</div>
+	<div class="col-md-10">
+		<!-- display comments -->
+		<% if @post.comments.length > 0 %>
+			<% @post.comments.each do |comment| %>
+				<blockquote><small><%= comment.body %> ~ <%= comment.commenter %></small></blockquote>
+			<% end %>
+		<% end %>
+		<!-- add comment -->
+		<!--try also .form-control and .form-group-->
+
+		<form method="POST" action="/posts/:post_id/comments" class="form-group">
+			<label for="commenter" >Add your name and comment here</label>
+			<input id="commenter" type="text" name="comment[commenter]" placeholder="Enter your name here" class="form-control"><br>
+			<textarea name="comment[description]" placeholder="Enter your comment here" class="form-control"></textarea><br>
+			<%= token_tag form_authenticity_token %>
+			<input type="hidden" id="post_id" name="post_id" value="<% @post.id %>">
+			<button class="btn btn-default" href="/comments/new">Add Comment</button>
+
+		</form>
+	</div><!-- closes column -->
+</div><!-- closes row -->
+
+
+
 
 <a href="/posts">Return to main posts page</a>
