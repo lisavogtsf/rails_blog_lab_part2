@@ -14,12 +14,12 @@
 
 <form method="GET" action="/posts/<%=@post.id%>/edit">
   <%= token_tag form_authenticity_token %>
-  <button>Update</button>
+  <button class="btn btn-default">Update</button>
 </form>
 <form method="POST" action="/posts/<%=@post.id%>">
   <input type="hidden" name="_method" value="DELETE">
   <%= token_tag form_authenticity_token %>
-  <button>Delete</button>
+  <button class="btn btn-warning">Delete</button>
 </form>
 
 <a href="/posts">Return to main posts page</a>
