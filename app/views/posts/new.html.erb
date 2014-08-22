@@ -1,13 +1,13 @@
-<form method="POST" action="/posts/create">
-  <label for="author">Author</label>
-  <input id="author" type="text" name="post[author]"><br>
-  <label for="title">Title</label>
-  <input id="title" type="text" name="post[title]"><br>
-  <textarea name="post[description]"></textarea><br>
-  <label for="tags">Tags</label>
-  <input id="tags" type="text" name="tags"><br>
-  <%= token_tag form_authenticity_token %>
-  <button>Save</button>
+<form method="POST" action="/posts">
+	<label for="author">Author</label>
+	<input id="author" type="text" name="post[author]"><br>
+	<label for="title">Title</label>
+	<input id="title" type="text" name="post[title]"><br>
+	<textarea name="post[description]"></textarea><br>
+	<label for="tags">Tags</label>
+	<input id="tags" type="text" name="tags"><br>
+	<%= token_tag form_authenticity_token %>
+	<button>Save</button>
 </form>
 
 <a href="/posts">Return to main posts page</a>
