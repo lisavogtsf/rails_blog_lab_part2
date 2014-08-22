@@ -10,7 +10,7 @@
 </p>
 <% end %>
 
-<p><%= @post.description %></p>
+<blockquote class="blockquote"><%= @post.description %></blockquote>
 
 <form method="GET" action="/posts/<%=@post.id%>/edit">
   <%= token_tag form_authenticity_token %>
